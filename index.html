@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css">
+    <link rel="stylesheet" href="styles.css" />    
+    <title>TODAY'S NEWS</title>
+</head>
+
+<body>
+    <div class="bg">
+        <div class="centered">TODAY'S NEWS</div>
+    </div>
+    
+    <div class="container" id="app">
+        <div class="row" v-for="posts in processedPosts">
+            <div class="columns large-3 medium-6" v-for="post in posts">
+                <div class="card">
+                    <div class="card-divider">
+                        {{ post.title }}
+                    </div>
+                    <a :href="post.url" target="_blank"><img :src="post.image_url"></a>
+                    <div class="card-section">
+                        <p>{{ post.abstract }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src='script.js'></script>
+</body>
+<br><br><br>
+<div class="footer">
+   <p><a href="https://github.com/mbisel/CP3.git"style="color:black;">GitHub</a></p>
+</div>
+</html>
